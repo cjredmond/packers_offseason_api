@@ -15,7 +15,7 @@ class Account(models.Model):
 
 
 class Player(models.Model):
-    user = models.OneToOneField('auth.User')
+    user = models.ForeignKey('auth.User')
     name = models.CharField(max_length=50)
     position = models.CharField(max_length=2, choices=POSITION)
     cap_hit = models.FloatField()
@@ -26,7 +26,7 @@ class Player(models.Model):
         return str(self.position + ' ' + self.first_name + " " + self.last_name)
 
 class FreeAgent(models.Model):
-    user = models.OneToOneField('auth.User')
+    user = models.ForeignKey('auth.User')
     name = models.CharField(max_length=50)
     position = models.CharField(max_length=2, choices=POSITION)
     cap_hit = models.FloatField()
@@ -37,7 +37,7 @@ class FreeAgent(models.Model):
         return str(self.position + ' ' + self.first_name + " " + self.last_name)
 
 class DraftPlayer(models.Model):
-    user = models.OneToOneField('auth.User')
+    user = models.ForeignKey('auth.User')
     name = models.CharField(max_length=50)
     position = models.CharField(max_length=2, choices=POSITION)
     cap_hit = models.FloatField()
@@ -48,7 +48,7 @@ class DraftPlayer(models.Model):
         return str(self.position + ' ' + self.first_name + " " + self.last_name)
 
 class CapCasualty(models.Model):
-    user = models.OneToOneField('auth.User')
+    user = models.ForeignKey('auth.User')
     name = models.CharField(max_length=50)
     position = models.CharField(max_length=2, choices=POSITION)
     cap_hit = models.FloatField()
