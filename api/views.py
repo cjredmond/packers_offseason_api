@@ -12,7 +12,17 @@ class PlayerListCreateAPIView(ListCreateAPIView):
         return Player.objects.filter(user=self.request.user)
     serializer_class = PlayerSerializer
 
+class PlayerDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    def get_queryset(self):
+        return Player.objects.filter(user=self.request.user)
+    serializer_class = PlayerSerializer
+
 class FreeAgentListCreateAPIView(ListCreateAPIView):
+    def get_queryset(self):
+        return FreeAgent.objects.filter(user=self.request.user)
+    serializer_class = FreeAgentSerializer
+
+class FreeAgentDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return FreeAgent.objects.filter(user=self.request.user)
     serializer_class = FreeAgentSerializer
