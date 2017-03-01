@@ -114,7 +114,7 @@ class Players extends Component {
         {linebackers}
         <h3>Corners</h3>
         {corners}
-        <h3>Safeties</h3>
+        <h4>Safeties</h4>
         {safeties}
       </div>
     );
