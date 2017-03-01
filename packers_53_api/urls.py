@@ -1,8 +1,8 @@
 from django.conf.urls import url
 from django.contrib import admin
 from api.views import PlayerListCreateAPIView, FreeAgentListCreateAPIView, DraftPlayerListCreateAPIView, \
-CapCasualtyListCreateAPIView, PlayerDetailUpdateDestroyAPIView, FreeAgentDetailUpdateDestroyAPIView, \
-IndexView
+CapCasualtyListCreateAPIView, PlayerDetailUpdateDestroyAPIView, FreeAgentDetailUpdateDestroyAPIView
+from game.views import IndexView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

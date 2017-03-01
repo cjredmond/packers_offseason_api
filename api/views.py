@@ -3,13 +3,9 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from api.models import Account, Player, FreeAgent, DraftPlayer, Draft, CapCasualty
 from api.serializers import PlayerSerializer, FreeAgentSerializer, DraftPlayerSerializer, CapCasualtySerializer
 from django.contrib.auth.models import User
-from django.views.generic import TemplateView
 import csv
 import random
 
-
-class IndexView(TemplateView):
-    template_name = 'index.html'
 
 class PlayerListCreateAPIView(ListCreateAPIView):
     def get_queryset(self):

@@ -1,13 +1,16 @@
+{% load staticfiles %}
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen" title="no title">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    
-    <div id='container'>
+
+    <div id='container' class='container'>
       {% render_bundle 'main' %}
     </div>
 
